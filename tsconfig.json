@@ -1,16 +1,21 @@
 {
-  "compileOnSave": true,
   "compilerOptions": {
+    "declaration": true,
+    "stripInternal": true,
+    "experimentalDecorators": true,
     "target": "ES5",
-    "module": "system",
+    "module": "es2015",
     "moduleResolution": "node",
     "sourceMap": true,
+    "inlineSources": true,
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
+    "lib": [ "es2015", "dom" ],
     "removeComments": false,
-    "noImplicitAny": false
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "index.ts"
   ]
 }

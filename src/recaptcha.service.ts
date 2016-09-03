@@ -5,6 +5,16 @@ import { Observable } from 'rxjs/Observable';
 import { Subscriber } from 'rxjs/Subscriber';
 import { AsyncSubject } from 'rxjs/AsyncSubject';
 
+export interface ReCaptchaOptions {
+  sitekey: string,
+	theme?: 'light' | 'dark';
+  type?: 'audio' | 'image';
+  size?: 'compact' | 'normal';
+	tabindex?: number;
+	callback?: (response: string) => void;
+	'expired-callback'?: () => void;
+}
+
 @Injectable()
 export class ReCaptchaService {
   private _recaptcha: AsyncSubject<any> = new AsyncSubject<any>();
@@ -32,7 +42,7 @@ export class ReCaptchaService {
   }
 
   static subs: number = 0;
-  render(element: ElementRef, opts?: {sitekey: string, tabindex?: number, size?: string, type?: string, theme?: string}): Observable<string> {
+  render(element: ElementRef, opts?: ReCaptchaOptions): Observable<string> {
     // console.log('ReCptchaService.render(): adding subscriber', ++ReCaptchaService.subs);
     // let id = ReCaptchaService.subs;
 

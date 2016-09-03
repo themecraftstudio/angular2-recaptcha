@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, Input, Output, EventEmitter, NgZone, ViewChild, ElementRef } from '@angular/core';
 
-import { ReCaptchaService } from './recaptcha.service';
+import { ReCaptchaService, ReCaptchaOptions } from './recaptcha.service';
 
 // RxJS
 import { AsyncSubject } from 'rxjs/AsyncSubject';
@@ -35,7 +35,7 @@ export class ReCaptchaComponent implements AfterViewInit {
     // this.recaptcha.render(this.container);
     this.recaptcha.render(this.container, {
       sitekey: '6LchCyYTAAAAAP9kT5GMPALXcLrZUu8eMjPdQbNL',
-      tabindex: parseInt(this.tabindex),
+      tabindex: this.tabindex,
       theme: this.theme,
       size: this.size,
       type: this.type,

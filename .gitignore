@@ -1,8 +1,7 @@
-/typings/
 node_modules/
 jspm_packages/
-/src/**/*.js
-/src/**/*.js.map
+/**/*.js
+/**/*.js.map
 npm-debug.log
 
 .DS_Store

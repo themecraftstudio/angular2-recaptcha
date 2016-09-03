@@ -2,9 +2,10 @@
   "name": "@themecraft/angular2-recaptcha",
   "version": "0.0.1",
   "description": "Google reCAPTCHA for Angular 2",
-  "main": "recaptcha.js",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
-    "postinstall": "typings install"
+    "prepublish": "rm -rf dist; tsc"
   },
   "repository": {
     "type": "git",
@@ -15,7 +16,7 @@
     "Google",
     "Angular"
   ],
-  "author": "Ettore Del Negro",
+  "author": "Ettore Del Negro <ettore@themecraft.studio>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/themecraftstudio/angular2-recaptcha/issues"
@@ -28,7 +29,6 @@
     "zone.js": "^0.6.17"
   },
   "devDependencies": {
-    "typescript": "^1.8.10",
-    "typings": "^1.3.3"
+    "typescript": "^2.0.0"
   }
 }
