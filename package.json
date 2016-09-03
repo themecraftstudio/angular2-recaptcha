@@ -1,10 +1,10 @@
 {
-  "name": "angular2-recaptcha",
+  "name": "@themecraft/angular2-recaptcha",
   "version": "1.0.0",
   "description": "Google reCAPTCHA for Angular 2",
   "main": "recaptcha.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "typings install"
   },
   "repository": {
     "type": "git",

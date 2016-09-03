@@ -32,7 +32,7 @@ export class ReCaptchaService {
   }
 
   static subs: number = 0;
-  render(element: ElementRef, opts?: {sitekey: string, tabindex?: number, size?: number, type?: string, theme?: string}): Observable<string> {
+  render(element: ElementRef, opts?: {sitekey: string, tabindex?: number, size?: string, type?: string, theme?: string}): Observable<string> {
     // console.log('ReCptchaService.render(): adding subscriber', ++ReCaptchaService.subs);
     // let id = ReCaptchaService.subs;
 
