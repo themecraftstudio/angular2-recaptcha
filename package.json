@@ -1,6 +1,6 @@
 {
   "name": "@themecraft/angular2-recaptcha",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Google reCAPTCHA for Angular 2",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
