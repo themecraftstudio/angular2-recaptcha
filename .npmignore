@@ -2,3 +2,4 @@ tsconfig.json
 README.md
 .editorconfig
 .gitignore
+*.ts
