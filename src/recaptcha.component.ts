@@ -1,10 +1,10 @@
-import { Component, AfterViewInit, Input, Output, EventEmitter, NgZone, ViewChild, ElementRef } from '@angular/core';
-
-import { ReCaptchaService, ReCaptchaOptions } from './recaptcha.service';
-
+import { Inject, Component, AfterViewInit, Input, Output, EventEmitter, NgZone, ViewChild, ElementRef } from '@angular/core';
 // RxJS
 import { AsyncSubject } from 'rxjs/AsyncSubject';
 import { Observable } from 'rxjs/Observable';
+
+import { RECAPTCHA_CONFIG, RecaptchaConfig } from './recaptcha.config';
+import { ReCaptchaService, ReCaptchaOptions } from './recaptcha.service';
 
 @Component({
   selector: 're-captcha',
@@ -29,12 +29,15 @@ export class ReCaptchaComponent implements AfterViewInit {
   @Output()
   success = new EventEmitter<string>();
 
-  constructor(protected recaptcha: ReCaptchaService) {}
+  constructor(
+    @Inject(RECAPTCHA_CONFIG) protected config: RecaptchaConfig,
+    protected recaptcha: ReCaptchaService
+  ) {}
 
   ngAfterViewInit() {
     // this.recaptcha.render(this.container);
     this.recaptcha.render(this.container, {
-      sitekey: '6LchCyYTAAAAAP9kT5GMPALXcLrZUu8eMjPdQbNL',
+      sitekey: this.config.siteKey,
       tabindex: this.tabindex,
       theme: this.theme,
       size: this.size,

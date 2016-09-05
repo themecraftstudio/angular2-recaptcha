@@ -1,2 +1,2 @@
-export { ReCaptchaModule } from './src/recaptcha.module';
-export { ReCaptchaComponent } from './src/recaptcha.component';
+export { RecaptchaModule } from './src/recaptcha.module';
+export { RECAPTCHA_CONFIG, RecaptchaConfig } from './src/recaptcha.config';

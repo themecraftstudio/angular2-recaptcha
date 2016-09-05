@@ -12,4 +12,4 @@ import { ReCaptchaComponent } from './recaptcha.component';
     ReCaptchaComponent
   ]
 })
-export class ReCaptchaModule { }
+export class RecaptchaModule { }

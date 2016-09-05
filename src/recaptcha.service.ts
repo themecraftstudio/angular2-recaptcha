@@ -1,9 +1,10 @@
-import { Injectable, NgZone, ElementRef } from '@angular/core';
-
+import { Inject, Injectable, NgZone, ElementRef } from '@angular/core';
 // RxJS
 import { Observable } from 'rxjs/Observable';
 import { Subscriber } from 'rxjs/Subscriber';
 import { AsyncSubject } from 'rxjs/AsyncSubject';
+
+import { RECAPTCHA_CONFIG, RecaptchaConfig } from './recaptcha.config';
 
 export interface ReCaptchaOptions {
   sitekey: string,
@@ -19,7 +20,10 @@ export interface ReCaptchaOptions {
 export class ReCaptchaService {
   private _recaptcha: AsyncSubject<any> = new AsyncSubject<any>();
 
-  constructor(private zone: NgZone) {
+  constructor(
+    @Inject(RECAPTCHA_CONFIG) protected config: RecaptchaConfig,
+    private zone: NgZone
+  ) {
     if (!('recaptchaLoaded' in window)) {
       window['recaptchaLoaded'] = () => {
         this.zone.run(this.recaptchaCallback.bind(this));
